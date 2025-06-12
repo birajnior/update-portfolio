@@ -1,17 +1,15 @@
-
 export const theme = {
-
   colors: {
-    background: "#2f4f4f", // Cor de fundo principal
-    text: "#ffffff", // Cor padrão do texto
-    textLight: "#cccccc", // Cor de apoio (ex: subtítulos)
-    primary: "#1f59ff", // Azul forte (botões, links)
-    primaryHover: "#1747cc", // Hover do botão azul
-    emphasis: "#32CD32", // Verde para destaques/CTA
-    button: "#1f59ff", // Botão padrão
-    buttonHover: "#1747cc", // Hover do botão
-    border: "#444", // Bordas neutras
-    light: "#f5f5f5", // Cor clara para backgrounds
+    background: "#2B003A", // Roxo profundo
+    text: "#ffffff", // Texto padrão branco
+    textLight: "#C292E8", // Lavanda claro
+    primary: "#B400FF", // Roxo elétrico (CTA)
+    primaryHover: "#D67BFF", // Lilás luminoso (hover)
+    emphasis: "#A239E0", // Magenta suave (destaque extra)
+    button: "#B400FF", // Botão primário
+    buttonHover: "#D67BFF", // Hover do botão
+    border: "#120012", // Preto violeta
+    light: "#C292E8", // Fundo leve / contraste
   },
   fonts: {
     body: "'Roboto', sans-serif",

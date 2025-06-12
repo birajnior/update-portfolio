@@ -17,7 +17,7 @@ export const Menu = styled.ul`
 
     &:hover {
       background-color: ${({ theme }) => theme.colors.primaryHover};
-      color: ${({ theme }) => theme.colors.light}
+      color: ${({ theme }) => theme.colors.border};
     }
   }
 `;
