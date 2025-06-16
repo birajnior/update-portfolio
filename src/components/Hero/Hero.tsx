@@ -1,15 +1,10 @@
-import {
-  Button,
-  ButtonContainer,
-  Section,
-  Subtitle,
-  Title,
-} from "./Hero.style";
-import { motion } from "framer-motion";
+import { BackgroundAnimado, Button, ButtonContainer, Section, Subtitle, Title } from './Hero.style';
+import { motion } from 'framer-motion';
 
 export const Hero = () => {
   return (
     <Section aria-label="Seção de destaque principal do site">
+      <BackgroundAnimado />
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -19,18 +14,18 @@ export const Hero = () => {
           Transformo <span>ideias</span> em soluções digitais eficientes.
         </Title>
       </motion.div>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.8 }}
       >
         <Subtitle>
-          Desenvolvimento web moderno e acessível para pequenas empresas,
-          profissionais autônomos e agências.
+          Desenvolvimento web moderno e acessível para pequenas empresas, profissionais autônomos e
+          agências.
         </Subtitle>
       </motion.div>
 
-      {/* motion.div: animação do grupo de botões */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

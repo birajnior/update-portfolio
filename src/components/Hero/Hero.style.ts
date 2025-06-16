@@ -57,3 +57,33 @@ export const Button = styled.a`
     background-color: ${({ theme }) => theme.colors.primaryHover};
   }
 `;
+
+// BackgroundAnimado = SVG posicionado atrás do conteúdo
+export const BackgroundAnimado = styled.div`
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle at center, #b400ff, transparent 70%);
+  filter: blur(120px);
+  opacity: 0.5;
+  z-index: 0;
+  animation: flutuar 8s ease-in-out infinite alternate;
+
+  @keyframes flutuar {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    100% {
+      transform: translate(30px, 40px) scale(1.05);
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -50px;
+  }
+`;
