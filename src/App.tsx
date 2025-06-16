@@ -1,7 +1,8 @@
 // import "./App.css";
-import { Hero } from "./components/Hero/Hero";
-import { Navbar } from "./components/Navbar/Navbar";
-import { WeatherWidget } from "./components/WeatherApi/WeatherWidget";
+import { About } from './components/About/About';
+import { Hero } from './components/Hero/Hero';
+import { Navbar } from './components/Navbar/Navbar';
+import { WeatherWidget } from './components/WeatherApi/WeatherWidget';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Navbar />
       <main className="pt-20">
         <Hero />
+        <About />
       </main>
       <WeatherWidget />
     </>
