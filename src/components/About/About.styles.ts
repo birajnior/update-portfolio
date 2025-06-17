@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
   padding: ${({ theme }) => theme.spacing.xxxl} ${({ theme }) => theme.spacing.lg};
-  background-color: ${({ theme }) => theme.colors.border}; /* usa border: "#120012" */
   color: ${({ theme }) => theme.colors.text};
 `;
 
@@ -104,6 +103,5 @@ export const SubsectionTitle = styled.h3`
 
 export const SectionMotion = styled(motion.section)`
   padding: ${({ theme }) => theme.spacing.xxxl} ${({ theme }) => theme.spacing.lg};
-  background-color: ${({ theme }) => theme.colors.border};
   color: ${({ theme }) => theme.colors.text};
 `;

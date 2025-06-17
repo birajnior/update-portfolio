@@ -1,6 +1,6 @@
 export const theme = {
   colors: {
-    background: '#2B003A', // Roxo profundo
+    background: '#120012', // Roxo profundo
     text: '#ffffff', // Texto padrão branco
     textLight: '#C292E8', // Lavanda claro
     primary: '#B400FF', // Roxo elétrico (CTA)
@@ -8,8 +8,9 @@ export const theme = {
     emphasis: '#A239E0', // Magenta suave (destaque extra)
     button: '#B400FF', // Botão primário
     buttonHover: '#D67BFF', // Hover do botão
-    border: '#120012', // Preto violeta
+    border: '#2B003A', // Preto violeta
     light: '#C292E8', // Fundo leve / contraste
+    teste: '#4F006B',
   },
   fonts: {
     body: "'Roboto', sans-serif",

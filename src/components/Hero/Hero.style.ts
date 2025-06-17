@@ -1,14 +1,18 @@
 import styled from 'styled-components';
+
 export const Section = styled.section`
+  position: relative; /* Necessário para posicionar elementos absolutos dentro */
+  overflow: hidden; /* Impede o estouro visual do background animado */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  min-height: 100vh;
-  padding: 4rem 2rem;
+  height: 100vh;
+  padding: 4rem 2rem 0;
   text-align: center;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.border};
   color: ${({ theme }) => theme.colors.text};
 `;
 
@@ -58,7 +62,7 @@ export const Button = styled.a`
   }
 `;
 
-// BackgroundAnimado = SVG posicionado atrás do conteúdo
+// BackgroundAnimado = Elemento decorativo animado
 type BackgroundAnimadoProps = {
   position?: 'top-left' | 'bottom-right';
 };

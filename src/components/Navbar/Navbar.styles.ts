@@ -1,6 +1,15 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  margin: 0 auto;
+  padding: 1rem 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+`;
+
 export const Menu = styled.ul`
   display: flex;
   gap: 1rem; /* Espaço entre os itens */

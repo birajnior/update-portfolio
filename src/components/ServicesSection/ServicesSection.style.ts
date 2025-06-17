@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-  padding: 8rem 2rem;
+  padding: 4rem 2rem 8rem;
   background-color: ${({ theme }) => theme.colors.background};
 `;
 

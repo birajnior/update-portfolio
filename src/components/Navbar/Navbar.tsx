@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Container } from '../Layout/Container';
-import { Header, HoverZone, Menu } from './Navbar.styles';
+import { Container, Header, HoverZone, Menu } from './Navbar.styles';
+import logo from '../../assets/nova-marca.png';
 
 export const Navbar = () => {
   const [show, setShow] = useState(true);
@@ -44,78 +44,90 @@ export const Navbar = () => {
         transition={{ duration: 0.3 }}
         role="banner"
       >
-        <Container className="flex justify-between items-center px-6 py-4 text-white">
-          <h1 className="text-xl font-bold">
-            jb<span className="text-blue-500">developer</span>
-          </h1>
-          <Menu>
-            <li>
-              <a
-                href="#inicio"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('inicio');
-                }}
-              >
-                Início
-              </a>
-            </li>
-            <li>
-              <a
-                href="#servicos"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('servicos');
-                }}
-              >
-                Serviços
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projetos"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('projetos');
-                }}
-              >
-                Projetos
-              </a>
-            </li>
-            <li>
-              <a
-                href="#depoimentos"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('depoimentos');
-                }}
-              >
-                Depoimentos
-              </a>
-            </li>
-            <li>
-              <a
-                href="#sobre"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('sobre');
-                }}
-              >
-                Sobre
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contato"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('contato');
-                }}
-              >
-                Contato
-              </a>
-            </li>
-          </Menu>
+        <Container>
+          <div className="flex items-center justify-between w-full">
+            {/* Esquerda */}
+            <div className="w-1/3">
+              <h1 className="text-xl">JBDEVELOPER</h1>
+            </div>
+
+            {/* Centro */}
+            <div className="w-1/3 flex justify-center">
+              <img src={logo} style={{ width: '80px' }} />
+            </div>
+
+            {/* Direita */}
+            <div className="w-1/3 flex justify-end">
+              <Menu>
+                <li>
+                  <a
+                    href="#inicio"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection('inicio');
+                    }}
+                  >
+                    Início
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#servicos"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection('servicos');
+                    }}
+                  >
+                    Serviços
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#projetos"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection('projetos');
+                    }}
+                  >
+                    Projetos
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#depoimentos"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection('depoimentos');
+                    }}
+                  >
+                    Depoimentos
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#sobre"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection('sobre');
+                    }}
+                  >
+                    Sobre
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contato"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection('contato');
+                    }}
+                  >
+                    Contato
+                  </a>
+                </li>
+              </Menu>
+            </div>
+          </div>
         </Container>
       </Header>
     </>

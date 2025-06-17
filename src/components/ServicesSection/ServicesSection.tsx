@@ -1,21 +1,21 @@
 import { motion } from 'framer-motion';
 import { FaCode, FaMobileAlt, FaRocket } from 'react-icons/fa';
 import { Section, Title, Subtitle, CardsGrid, Card } from './ServicesSection.style';
-import { BackgroundAnimado } from '../Hero/Hero.style';
+// import { BackgroundAnimado } from '../Hero/Hero.style';
 
 const services = [
   {
-    icon: <FaCode size={36} />, // ícone de código
+    icon: <FaCode size={36} />,
     title: 'Sites Responsivos',
     description: 'Criação de sites modernos, rápidos e adaptáveis a qualquer dispositivo.',
   },
   {
-    icon: <FaMobileAlt size={36} />, // ícone de aplicativo mobile
+    icon: <FaMobileAlt size={36} />,
     title: 'Web Apps',
     description: 'Aplicações interativas com foco em performance e experiência do usuário.',
   },
   {
-    icon: <FaRocket size={36} />, // ícone de foguete
+    icon: <FaRocket size={36} />,
     title: 'Lançamento de Projetos',
     description: 'Do protótipo ao ar: te ajudo a colocar seu projeto no ar com eficiência.',
   },
@@ -25,13 +25,9 @@ export const ServicesSection = () => {
   return (
     <Section
       id="servicos"
-      className="relative py-32 px-4 md:px-12 bg-background mb-24 overflow-hidden"
+      className="relative py-32 px-4 md:px-12 mb-24 overflow-hidden"
       aria-label="Seção de serviços oferecidos"
     >
-      {/* Faixas decorativas no topo e base */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-primary" aria-hidden="true"></div>
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-primary" aria-hidden="true"></div>
-
       <div className="text-center mb-12 relative z-10">
         <Title>Serviços</Title>
         <Subtitle>O que posso fazer por você</Subtitle>
@@ -56,7 +52,6 @@ export const ServicesSection = () => {
           </Card>
         ))}
       </CardsGrid>
-      <BackgroundAnimado position="bottom-right" />
     </Section>
   );
 };

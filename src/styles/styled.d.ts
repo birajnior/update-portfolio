@@ -14,6 +14,7 @@ declare module 'styled-components' {
       buttonHover: string;
       border: string;
       light: string;
+      teste: string;
     };
     fonts: {
       body: string;

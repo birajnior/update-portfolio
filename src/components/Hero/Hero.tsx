@@ -38,6 +38,8 @@ export const Hero = () => {
           </Button>
         </ButtonContainer>
       </motion.div>
+      {/* Elemento de fundo animado no canto inferior direito */}
+      <BackgroundAnimado position="bottom-right" />
     </Section>
   );
 };
