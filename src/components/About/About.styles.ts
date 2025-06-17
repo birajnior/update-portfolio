@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const Section = styled.section`
@@ -16,18 +17,33 @@ export const Title = styled.h2`
 
 export const ContentWrapper = styled.div`
   display: flex;
-  gap: 14rem;
+  gap: 12rem;
   align-items: flex-start;
   justify-content: center;
   max-width: 1680px;
   margin: 0 auto;
+  padding-inline: ${({ theme }) => theme.spacing.xl};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    gap: 6rem; // 👈 se quiser suavizar antes de virar coluna
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.notebook}) {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 2rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    padding-inline: ${({ theme }) => theme.spacing.lg};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.phone}) {
+    padding-inline: ${({ theme }) => theme.spacing.md};
   }
 `;
+
 
 export const Photo = styled.img`
   width: 600px;
@@ -84,4 +100,10 @@ export const SubsectionTitle = styled.h3`
   font-size: 1.25rem;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.emphasis};
+`;
+
+export const SectionMotion = styled(motion.section)`
+  padding: ${({ theme }) => theme.spacing.xxxl} ${({ theme }) => theme.spacing.lg};
+  background-color: ${({ theme }) => theme.colors.border};
+  color: ${({ theme }) => theme.colors.text};
 `;

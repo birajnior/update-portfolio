@@ -1,26 +1,24 @@
-import { motion } from 'framer-motion';
 import {
-  Section,
   Title,
   Paragraph,
   SubsectionTitle,
   ContentWrapper,
   Photo,
   TextWrapper,
+  SectionMotion,
 } from './About.styles';
 import minhaFoto from '../../assets/bira-jr.webp';
 import { SkillsGrid } from './SkillsGrid';
 
 export const About = () => {
   return (
-    <Section
+    <SectionMotion
       id="sobre"
-      as={motion.section}
       aria-label="Seção Sobre Mim"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.9 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.3 }}
     >
       <Title>Sobre Mim</Title>
 
@@ -65,6 +63,6 @@ export const About = () => {
           </Paragraph>
         </TextWrapper>
       </ContentWrapper>
-    </Section>
+    </SectionMotion>
   );
 };
