@@ -11,7 +11,7 @@ export const Title = styled.h2`
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  margin-left: 8rem;
+  margin-left: 2rem;
   color: ${({ theme }) => theme.colors.primary};
 `;
 
