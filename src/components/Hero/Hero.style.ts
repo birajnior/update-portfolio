@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 export const Section = styled.section`
   display: flex;
   flex-direction: column;
@@ -59,10 +59,12 @@ export const Button = styled.a`
 `;
 
 // BackgroundAnimado = SVG posicionado atrás do conteúdo
-export const BackgroundAnimado = styled.div`
+type BackgroundAnimadoProps = {
+  position?: 'top-left' | 'bottom-right';
+};
+
+export const BackgroundAnimado = styled.div<BackgroundAnimadoProps>`
   position: absolute;
-  top: -100px;
-  left: -100px;
   width: 600px;
   height: 600px;
   background: radial-gradient(circle at center, #b400ff, transparent 70%);
@@ -70,6 +72,21 @@ export const BackgroundAnimado = styled.div`
   opacity: 0.5;
   z-index: 0;
   animation: flutuar 8s ease-in-out infinite alternate;
+  pointer-events: none;
+
+  ${({ position }) =>
+    position === 'top-left' &&
+    `
+      top: -100px;
+      left: -100px;
+    `}
+
+  ${({ position }) =>
+    position === 'bottom-right' &&
+    `
+      bottom: -100px;
+      right: -100px;
+    `}
 
   @keyframes flutuar {
     0% {
@@ -83,7 +100,19 @@ export const BackgroundAnimado = styled.div`
   @media (max-width: 768px) {
     width: 300px;
     height: 300px;
-    top: -50px;
-    left: -50px;
+
+    ${({ position }) =>
+      position === 'top-left' &&
+      `
+        top: -50px;
+        left: -50px;
+      `}
+
+    ${({ position }) =>
+      position === 'bottom-right' &&
+      `
+        bottom: -50px;
+        right: -50px;
+      `}
   }
 `;

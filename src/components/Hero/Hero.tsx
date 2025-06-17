@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export const Hero = () => {
   return (
     <Section id="inicio" aria-label="Seção de destaque principal do site">
-      <BackgroundAnimado />
+      <BackgroundAnimado position="top-left" />
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}

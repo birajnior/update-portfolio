@@ -11,16 +11,16 @@ export const Title = styled.h2`
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  margin-left: 2rem;
+  margin-left: 4rem;
   color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const ContentWrapper = styled.div`
   display: flex;
-  gap: 12rem;
+  gap: 10rem;
   align-items: flex-start;
   justify-content: center;
-  max-width: 1680px;
+  max-width: 1580px;
   margin: 0 auto;
   padding-inline: ${({ theme }) => theme.spacing.xl};
 
