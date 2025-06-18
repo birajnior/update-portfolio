@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { media } from '../../styles/media';
 
 export const Section = styled.section`
   padding: ${({ theme }) => theme.spacing.xxxl} ${({ theme }) => theme.spacing.lg};
@@ -12,6 +13,11 @@ export const Title = styled.h2`
   margin-bottom: 2rem;
   margin-left: 4rem;
   color: ${({ theme }) => theme.colors.primary};
+
+  @media ${media.tablet}, ${media.mobile}, ${media.smallMobile} {
+    margin-left: 0;
+    text-align: center;
+  }
 `;
 
 export const ContentWrapper = styled.div`
@@ -23,26 +29,22 @@ export const ContentWrapper = styled.div`
   margin: 0 auto;
   padding-inline: ${({ theme }) => theme.spacing.xl};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    gap: 6rem; // 👈 se quiser suavizar antes de virar coluna
+  @media ${media.desktop} {
+    gap: 6rem;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.notebook}) {
+  @media ${media.notebook}, ${media.tablet}, ${media.mobile}, ${media.smallMobile} {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 2rem;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding-inline: ${({ theme }) => theme.spacing.lg};
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.phone}) {
+  @media ${media.mobile}, ${media.smallMobile} {
     padding-inline: ${({ theme }) => theme.spacing.md};
   }
 `;
-
 
 export const Photo = styled.img`
   width: 600px;
@@ -52,17 +54,17 @@ export const Photo = styled.img`
   object-fit: cover;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.notebook}) {
+  @media ${media.notebook} {
     width: 420px;
     height: 500px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media ${media.tablet} {
     width: 300px;
     height: 380px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.phone}) {
+  @media ${media.mobile}, ${media.smallMobile} {
     width: 220px;
     height: 280px;
     margin: 0 auto;
@@ -75,15 +77,15 @@ export const TextWrapper = styled.div`
   font-size: 1rem;
   line-height: 1.8;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.notebook}) {
+  @media ${media.notebook} {
     max-width: 640px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media ${media.tablet} {
     max-width: 90%;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.phone}) {
+  @media ${media.mobile}, ${media.smallMobile} {
     max-width: 100%;
   }
 `;

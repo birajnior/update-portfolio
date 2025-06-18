@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import { media } from '../../styles/media';
 
 export const Section = styled.section`
-  position: relative; /* Necessário para posicionar elementos absolutos dentro */
-  overflow: hidden; /* Impede o estouro visual do background animado */
+  position: relative;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
@@ -16,29 +17,42 @@ export const Section = styled.section`
   color: ${({ theme }) => theme.colors.text};
 `;
 
-// Title = Título principal (h1)
 export const Title = styled.h1`
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-family: ${({ theme }) => theme.fonts.heading};
 
   span {
     color: ${({ theme }) => theme.colors.primary};
   }
 
-  @media (min-width: 768px) {
+  @media ${media.tablet} {
+    font-size: 3rem;
+  }
+
+  @media ${media.notebook} {
+    font-size: 3.5rem;
+  }
+
+  @media ${media.desktop} {
     font-size: 4rem;
   }
 `;
 
-// Subtitle = Subtítulo (h2 ou p)
 export const Subtitle = styled.p`
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   margin-top: 1rem;
   max-width: 720px;
   color: ${({ theme }) => theme.colors.textLight};
+
+  @media ${media.mobile} {
+    font-size: 1.125rem;
+  }
+
+  @media ${media.smallMobile} {
+    font-size: 1rem;
+  }
 `;
 
-// ButtonContainer = Agrupa os botões com espaço entre eles
 export const ButtonContainer = styled.div`
   margin-top: 2rem;
   display: flex;
@@ -47,7 +61,6 @@ export const ButtonContainer = styled.div`
   justify-content: center;
 `;
 
-// Botão genérico
 export const Button = styled.a`
   background-color: ${({ theme }) => theme.colors.primary};
   color: white;
@@ -62,7 +75,6 @@ export const Button = styled.a`
   }
 `;
 
-// BackgroundAnimado = Elemento decorativo animado
 type BackgroundAnimadoProps = {
   position?: 'top-left' | 'bottom-right';
 };
@@ -101,7 +113,7 @@ export const BackgroundAnimado = styled.div<BackgroundAnimadoProps>`
     }
   }
 
-  @media (max-width: 768px) {
+  @media ${media.tablet} {
     width: 300px;
     height: 300px;
 

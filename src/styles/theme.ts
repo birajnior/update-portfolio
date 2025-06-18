@@ -26,10 +26,4 @@ export const theme = {
     xxl: '3rem', // 48px
     xxxl: '4rem', // 64px
   },
-  breakpoints: {
-    desktop: '1440px',
-    notebook: '1024px',
-    tablet: '768px',
-    phone: '480px',
-  },
 };

@@ -31,10 +31,12 @@ declare module 'styled-components' {
       xxxl: string;
     };
     breakpoints: {
-      desktop: string;
-      notebook: string;
-      tablet: string;
-      phone: string;
+      xsmall: string;
+      small: string;
+      medium: string;
+      large: string;
+      xlarge: string;
+      xxlarge: string;
     };
   }
 }

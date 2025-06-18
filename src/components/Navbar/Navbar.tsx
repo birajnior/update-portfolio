@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Container, Header, HoverZone, Menu } from './Navbar.styles';
+import { Container, Header, HoverZone, Menu, HamburgerButton, MobileMenu, Brand } from './Navbar.styles';
+import { FiMenu, FiX } from 'react-icons/fi';
 import logo from '../../assets/nova-marca.png';
 
 export const Navbar = () => {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [forceShow, setForceShow] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
@@ -14,15 +16,24 @@ export const Navbar = () => {
     }
   };
 
-  // Detecta rolagem
+  const menuItems = [
+    { id: 'inicio', label: 'Início' },
+    { id: 'servicos', label: 'Serviços' },
+    { id: 'projetos', label: 'Projetos' },
+    { id: 'depoimentos', label: 'Depoimentos' },
+    { id: 'sobre', label: 'Sobre' },
+    { id: 'contato', label: 'Contato' },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       const currentY = window.scrollY;
 
       if (currentY < 50 || currentY < lastScrollY) {
-        setShow(true); // mostra ao subir
+        setShow(true);
       } else {
-        setShow(false); // esconde ao descer
+        setShow(false);
+        setMobileOpen(false); // fecha o menu mobile ao rolar
       }
 
       setLastScrollY(currentY);
@@ -34,10 +45,8 @@ export const Navbar = () => {
 
   return (
     <>
-      {/* Hover no topo */}
       <HoverZone onMouseEnter={() => setForceShow(true)} onMouseLeave={() => setForceShow(false)} />
 
-      {/* Header com animação de subir/descer */}
       <Header
         initial={{ y: 0 }}
         animate={{ y: show || forceShow ? 0 : -100 }}
@@ -48,87 +57,68 @@ export const Navbar = () => {
           <div className="flex items-center justify-between w-full">
             {/* Esquerda */}
             <div className="w-1/3">
-              <h1 className="text-xl">JBDEVELOPER</h1>
+              <Brand>JBDEVELOPER</Brand>
             </div>
 
             {/* Centro */}
             <div className="w-1/3 flex justify-center">
-              <img src={logo} style={{ width: '80px' }} />
+              <img src={logo} style={{ width: '65px' }} />
             </div>
 
             {/* Direita */}
-            <div className="w-1/3 flex justify-end">
+            <div className="w-1/3 flex justify-end items-center gap-4">
+              {/* Botão hamburger (aparece só no mobile) */}
+              <HamburgerButton
+                aria-label={mobileOpen ? 'Fechar menu' : 'Abrir menu'}
+                onClick={() => setMobileOpen((prev) => !prev)}
+              >
+                {mobileOpen ? <FiX /> : <FiMenu />}
+              </HamburgerButton>
+
+              {/* Menu desktop (oculto em telas pequenas) */}
               <Menu>
-                <li>
-                  <a
-                    href="#inicio"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection('inicio');
-                    }}
-                  >
-                    Início
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#servicos"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection('servicos');
-                    }}
-                  >
-                    Serviços
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#projetos"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection('projetos');
-                    }}
-                  >
-                    Projetos
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#depoimentos"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection('depoimentos');
-                    }}
-                  >
-                    Depoimentos
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#sobre"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection('sobre');
-                    }}
-                  >
-                    Sobre
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#contato"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection('contato');
-                    }}
-                  >
-                    Contato
-                  </a>
-                </li>
+                {menuItems.map(({ id, label }) => (
+                  <li key={id}>
+                    <a
+                      href={`#${id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToSection(id);
+                      }}
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
               </Menu>
             </div>
           </div>
         </Container>
+
+        {/* Menu Mobile (aparece abaixo do header) */}
+        {mobileOpen && (
+          <MobileMenu
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+          >
+            {menuItems.map(({ id, label }) => (
+              <li key={id}>
+                <a
+                  href={`#${id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(id);
+                    setMobileOpen(false); // Fecha o menu ao clicar
+                  }}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </MobileMenu>
+        )}
       </Header>
     </>
   );
