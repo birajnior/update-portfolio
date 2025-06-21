@@ -20,7 +20,7 @@ export const Navbar = () => {
     { id: 'inicio', label: 'Início' },
     { id: 'servicos', label: 'Serviços' },
     { id: 'projetos', label: 'Projetos' },
-    { id: 'depoimentos', label: 'Depoimentos' },
+    // { id: 'depoimentos', label: 'Depoimentos' },
     { id: 'sobre', label: 'Sobre' },
     { id: 'contato', label: 'Contato' },
   ];

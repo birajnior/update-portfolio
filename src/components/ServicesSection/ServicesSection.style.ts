@@ -36,7 +36,7 @@ export const CardsGrid = styled.div`
   margin: 0 auto;
 
   @media ${media.notebook} {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   @media ${media.tablet}, ${media.mobile}, ${media.smallMobile} {
