@@ -8,10 +8,10 @@ export const Section = styled.section`
 `;
 
 export const Title = styled.h2`
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 2rem;
-  margin-left: 4rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
   color: ${({ theme }) => theme.colors.primary};
 
   @media ${media.tablet}, ${media.mobile}, ${media.smallMobile} {
@@ -33,7 +33,7 @@ export const ContentWrapper = styled.div`
     gap: 6rem;
   }
 
-  @media ${media.notebook}, ${media.tablet}, ${media.mobile}, ${media.smallMobile} {
+  @media ${media.desktop}, ${media.notebook}, ${media.tablet}, ${media.mobile}, ${media.smallMobile} {
     flex-direction: column;
     align-items: center;
     text-align: center;

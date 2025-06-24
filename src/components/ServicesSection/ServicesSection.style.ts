@@ -7,7 +7,7 @@ export const Section = styled.section`
 `;
 
 export const Title = styled.h2`
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.primary};
 

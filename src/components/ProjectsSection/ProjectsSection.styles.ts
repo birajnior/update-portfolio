@@ -16,6 +16,10 @@ export const Title = styled.h2`
   text-align: center;
   margin-bottom: 4rem;
 
+  @media ${media.smallMobile}, ${media.mobile} {
+    font-size: 1.5rem;
+  }
+
   @media ${media.tablet} {
     font-size: 2rem;
   }
@@ -29,7 +33,7 @@ export const ProjectContainer = styled.div`
   max-width: 1300px;
   margin: 0 auto;
 
-  @media ${media.notebook} {
+  @media ${media.smallMobile}, ${media.mobile}, ${media.tablet}, ${media.notebook} {
     flex-direction: column;
     text-align: center;
   }
@@ -37,12 +41,20 @@ export const ProjectContainer = styled.div`
 
 export const Info = styled.div`
   flex: 1;
+
+  @media ${media.smallMobile}, ${media.mobile}, ${media.tablet}, ${media.notebook} {
+    order: 2;
+  }
 `;
 
 export const ProjectTitle = styled.h3`
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   color: ${({ theme }) => theme.colors.emphasis};
+
+  @media ${media.smallMobile}, ${media.mobile} {
+    font-size: 1.25rem;
+  }
 
   @media ${media.tablet} {
     font-size: 1.5rem;
@@ -50,9 +62,14 @@ export const ProjectTitle = styled.h3`
 `;
 
 export const Description = styled.p`
-  font-size: 1.125rem;
+  font-size: 1.5rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
   color: ${({ theme }) => theme.colors.textLight};
+
+  @media ${media.smallMobile}, ${media.mobile}, ${media.tablet} {
+    font-size: 1rem;
+  }
 `;
 
 export const TechList = styled.ul`
@@ -60,6 +77,11 @@ export const TechList = styled.ul`
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+  justify-content: flex-start;
+
+  @media ${media.smallMobile}, ${media.mobile}, ${media.tablet}, ${media.notebook} {
+    justify-content: center;
+  }
 `;
 
 export const TechItem = styled.li`
@@ -77,7 +99,7 @@ export const ButtonsWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: flex-start;
 
-  @media ${media.notebook} {
+  @media ${media.smallMobile}, ${media.mobile}, ${media.tablet}, ${media.notebook} {
     justify-content: center;
   }
 `;
@@ -90,9 +112,9 @@ export const StyledButton = styled.a`
   color: white;
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
-  transition: background-color 0.25s;
+  transition: background-color 0.3s ease;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primaryHover};
@@ -104,6 +126,10 @@ export const ImageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media ${media.smallMobile}, ${media.mobile}, ${media.tablet}, ${media.notebook} {
+    order: 1;
+  }
 `;
 
 export const ProjectImage = styled.img`
@@ -131,6 +157,10 @@ export const NavigationButtons = styled.div`
 
     &:hover {
       background-color: ${({ theme }) => theme.colors.primaryHover};
+    }
+    &:disable {
+      opacity: 0.4;
+      cursor: not-allowed;
     }
   }
 `;

@@ -30,13 +30,5 @@ declare module 'styled-components' {
       xxl: string;
       xxxl: string;
     };
-    breakpoints: {
-      xsmall: string;
-      small: string;
-      medium: string;
-      large: string;
-      xlarge: string;
-      xxlarge: string;
-    };
   }
 }
