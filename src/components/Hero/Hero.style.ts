@@ -76,7 +76,7 @@ export const Button = styled.a`
 `;
 
 type BackgroundAnimadoProps = {
-  position?: 'top-left' | 'bottom-right';
+  $position?: 'top-left' | 'bottom-right';
 };
 
 export const BackgroundAnimado = styled.div<BackgroundAnimadoProps>`
@@ -90,15 +90,15 @@ export const BackgroundAnimado = styled.div<BackgroundAnimadoProps>`
   animation: flutuar 8s ease-in-out infinite alternate;
   pointer-events: none;
 
-  ${({ position }) =>
-    position === 'top-left' &&
+  ${({ $position }) =>
+    $position === 'top-left' &&
     `
       top: -100px;
       left: -100px;
     `}
 
-  ${({ position }) =>
-    position === 'bottom-right' &&
+  ${({ $position }) =>
+    $position === 'bottom-right' &&
     `
       bottom: -100px;
       right: -100px;
@@ -117,15 +117,15 @@ export const BackgroundAnimado = styled.div<BackgroundAnimadoProps>`
     width: 300px;
     height: 300px;
 
-    ${({ position }) =>
-      position === 'top-left' &&
+    ${({ $position }) =>
+      $position === 'top-left' &&
       `
         top: -50px;
         left: -50px;
       `}
 
-    ${({ position }) =>
-      position === 'bottom-right' &&
+    ${({ $position }) =>
+      $position === 'bottom-right' &&
       `
         bottom: -50px;
         right: -50px;

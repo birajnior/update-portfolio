@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export const Hero = () => {
   return (
     <Section id="inicio" aria-label="Seção de destaque principal do site">
-      <BackgroundAnimado position="top-left" />
+      <BackgroundAnimado $position="top-left" />
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ export const Hero = () => {
         </ButtonContainer>
       </motion.div>
       {/* Elemento de fundo animado no canto inferior direito */}
-      <BackgroundAnimado position="bottom-right" />
+      <BackgroundAnimado $position="bottom-right" />
     </Section>
   );
 };

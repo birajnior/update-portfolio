@@ -34,8 +34,8 @@ export const ContactSection: React.FC = () => {
             <Input type="text" name="name" placeholder="Nome" required />
             <Input type="email" name="email" placeholder="E-mail" required />
             <Input type="tel" name="phone" placeholder="Telefone" required />
-            <Select name="contact_preference" required>
-              <option value="" disabled selected>
+            <Select name="contact_preference" defaultValue="" required>
+              <option value="" disabled>
                 Preferência de contato
               </option>
               <option value="WhatsApp">WhatsApp</option>
@@ -74,7 +74,7 @@ export const ContactSection: React.FC = () => {
             >
               <FaLinkedin />
             </a>
-            <a href="https://www.instagram.com/birajnior" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/jbdeveloper" target="_blank" rel="noreferrer">
               <FaInstagram />
             </a>
             <a href="https://www.tiktok.com/@birajnior" target="_blank" rel="noreferrer">
