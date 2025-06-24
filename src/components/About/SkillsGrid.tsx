@@ -16,12 +16,17 @@ import {
 } from 'react-icons/si';
 
 import styled from 'styled-components';
+import { media } from '../../styles/media';
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
+
+  @media ${media.smallMobile} {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const SkillItem = styled.div`
