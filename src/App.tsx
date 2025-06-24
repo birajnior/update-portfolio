@@ -7,7 +7,6 @@ import { Navbar } from './components/Navbar/Navbar';
 import { ProjectsSection } from './components/ProjectsSection/ProjectsSection';
 import { SectionDivider } from './components/SectionDivider';
 import { ServicesSection } from './components/ServicesSection/ServicesSection';
-import { WeatherWidget } from './components/WeatherApi/WeatherWidget';
 
 function App() {
   return (
@@ -26,7 +25,6 @@ function App() {
         <SectionDivider />
         <Footer />
       </main>
-      <WeatherWidget />
     </>
   );
 }
