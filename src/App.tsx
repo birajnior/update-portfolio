@@ -1,5 +1,7 @@
 // import "./App.css";
 import { About } from './components/About/About';
+import { ContactSection } from './components/ContactSection/ContactSection';
+import Footer from './components/Footer/Footer';
 import { Hero } from './components/Hero/Hero';
 import { Navbar } from './components/Navbar/Navbar';
 import { ProjectsSection } from './components/ProjectsSection/ProjectsSection';
@@ -20,6 +22,9 @@ function App() {
         <SectionDivider />
         <About />
         <SectionDivider />
+        <ContactSection />
+        <SectionDivider />
+        <Footer />
       </main>
       <WeatherWidget />
     </>
