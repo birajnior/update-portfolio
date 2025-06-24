@@ -13,6 +13,9 @@ import {
   Socials,
   Title,
   TitleFom,
+  Description,
+  CallToWork,
+  Email,
 } from './ContactSection.style';
 
 import { motion } from 'framer-motion';
@@ -55,13 +58,13 @@ export const ContactSection: React.FC = () => {
           viewport={{ once: true }}
         >
           <Title>Quer tirar suas ideias do papel?</Title>
-          <p>
+          <Description>
             Eu ajudo você a criar soluções digitais que impulsionam resultados. Vamos conversar
             sobre como podemos desenvolver algo incrível para o seu negócio!
-          </p>
+          </Description>
           <div>
-            <h4>Vamos trabalhar juntos!</h4>
-            <p>Email: ubiratanbernardo@outlook.com</p>
+            <CallToWork>Vamos trabalhar juntos!</CallToWork>
+            <Email>Email: ubiratanbernardo@outlook.com</Email>
           </div>
           <Socials>
             <a href="https://github.com/birajnior" target="_blank" rel="noreferrer">

@@ -136,7 +136,7 @@ export const TitleFom = styled.h1`
   font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primaryHover};
 
   @media ${media.smallMobile}, ${media.mobile}, ${media.tablet} {
     font-size: 1.5rem;
@@ -146,9 +146,35 @@ export const TitleFom = styled.h1`
 export const Title = styled.h2`
   font-size: 2.25rem;
   font-weight: 700;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primaryHover};
 
   @media ${media.smallMobile}, ${media.mobile}, ${media.tablet} {
     font-size: 1.4rem;
+  }
+`;
+
+export const Description = styled.p`
+  font-size: 1.3rem;
+
+  @media ${media.smallMobile}, ${media.mobile}, ${media.tablet} {
+    font-size: 1rem;
+  }
+`;
+
+export const CallToWork = styled.h4`
+  font-size: 1.3rem;
+  color: ${({ theme }) => theme.colors.primaryHover};
+
+  @media ${media.smallMobile}, ${media.mobile}, ${media.tablet} {
+    font-size: 1rem;
+  }
+`;
+
+export const Email = styled.p`
+  font-size: 1.1rem;
+  margin-top: 8px;
+
+  @media ${media.smallMobile}, ${media.mobile}, ${media.tablet} {
+    font-size: 1rem;
   }
 `;
