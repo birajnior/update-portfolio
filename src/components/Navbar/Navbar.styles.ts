@@ -127,12 +127,14 @@ export const LogoWrapper = styled.div`
 // Estilo da imagem do logo na esquerda
 export const LogoImage = styled.img`
   width: 45px;
+  height: 45px;
 `;
 
 // Logo centralizada que aparece só em telas maiores que notebook
 export const CenterLogo = styled.img`
   display: block;
   width: 65px;
+  height: 65px;
 
   // Esconder logo central em telas menores ou iguais a notebook
   @media ${media.notebook}, ${media.tablet}, ${media.mobile}, ${media.smallMobile} {
