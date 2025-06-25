@@ -2,11 +2,6 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { media } from '../../styles/media';
 
-export const Section = styled.section`
-  padding: ${({ theme }) => theme.spacing.xxxl} ${({ theme }) => theme.spacing.lg};
-  color: ${({ theme }) => theme.colors.text};
-`;
-
 export const Title = styled.h2`
   font-size: 2.5rem;
   font-weight: 700;
@@ -22,7 +17,7 @@ export const Title = styled.h2`
 
 export const ContentWrapper = styled.div`
   display: flex;
-  gap: 10rem;
+  gap: 8rem;
   align-items: flex-start;
   justify-content: center;
   max-width: 1580px;
@@ -30,10 +25,10 @@ export const ContentWrapper = styled.div`
   padding-inline: ${({ theme }) => theme.spacing.xl};
 
   @media ${media.desktop} {
-    gap: 6rem;
+    gap: 5rem;
   }
 
-  @media ${media.desktop}, ${media.notebook}, ${media.tablet}, ${media.mobile}, ${media.smallMobile} {
+  @media ${media.notebook}, ${media.tablet}, ${media.mobile}, ${media.smallMobile} {
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -74,7 +69,6 @@ export const Photo = styled.img`
 export const TextWrapper = styled.div`
   flex: 1;
   max-width: 700px;
-  font-size: 1rem;
   line-height: 1.8;
 
   @media ${media.notebook} {
@@ -91,8 +85,18 @@ export const TextWrapper = styled.div`
 `;
 
 export const Paragraph = styled.p`
+  font-family: ${({ theme }) => theme.fonts.heading};
   margin-bottom: 1.5rem;
   line-height: 1.6;
+  font-size: 1.3rem;
+
+  @media ${media.desktop},
+    ${media.notebook},
+    ${media.tablet},
+    ${media.mobile},
+    ${media.smallMobile} {
+    font-size: 1rem;
+  }
 `;
 
 export const SubsectionTitle = styled.h3`

@@ -101,6 +101,7 @@ export const SubmitButton = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.colors.buttonHover};
     transform: scale(1.05);
+    color: ${({ theme }) => theme.colors.background};
   }
 
   @media ${media.smallMobile}, ${media.mobile}, ${media.tablet} {

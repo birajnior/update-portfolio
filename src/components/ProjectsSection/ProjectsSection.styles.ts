@@ -118,6 +118,7 @@ export const StyledButton = styled.a`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primaryHover};
+    color: ${({ theme}) => theme.colors.background}
   }
 `;
 
@@ -157,6 +158,7 @@ export const NavigationButtons = styled.div`
 
     &:hover {
       background-color: ${({ theme }) => theme.colors.primaryHover};
+      color: ${({ theme }) => theme.colors.background};
     }
     &:disable {
       opacity: 0.4;

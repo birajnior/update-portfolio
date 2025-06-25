@@ -21,7 +21,7 @@ import { media } from '../../styles/media';
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 1.5rem;
+  gap: 1rem;
   margin-top: 2rem;
 
   @media ${media.smallMobile} {

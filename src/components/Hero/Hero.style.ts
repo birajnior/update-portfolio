@@ -39,6 +39,7 @@ export const Title = styled.h1`
 `;
 
 export const Subtitle = styled.p`
+font-family: ${({ theme }) => theme.fonts.heading};
   font-size: 1.75rem;
   margin-top: 1rem;
   max-width: 720px;
@@ -72,6 +73,7 @@ export const Button = styled.a`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primaryHover};
+    color: ${({ theme }) => theme.colors.background};
   }
 `;
 
