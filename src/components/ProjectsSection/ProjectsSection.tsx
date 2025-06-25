@@ -18,7 +18,7 @@ import {
 import { ProjectsData } from './ProjectsData';
 import { AnimatePresence, motion } from 'framer-motion';
 
-export const ProjectsSection = () => {
+const ProjectsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const project = ProjectsData[currentIndex];
 
@@ -103,3 +103,5 @@ export const ProjectsSection = () => {
     </Section>
   );
 };
+
+export default ProjectsSection;

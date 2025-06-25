@@ -8,9 +8,9 @@ import {
   SectionMotion,
 } from './About.styles';
 import minhaFoto from '../../assets/bira-jr.webp';
-import { SkillsGrid } from './SkillsGrid';
+import  SkillsGrid  from './SkillsGrid';
 
-export const About = () => {
+const About = () => {
   return (
     <SectionMotion
       id="sobre"
@@ -66,3 +66,5 @@ export const About = () => {
     </SectionMotion>
   );
 };
+
+export default About;

@@ -18,7 +18,7 @@ export const Section = styled.section`
 `;
 
 export const Title = styled.h1`
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-family: ${({ theme }) => theme.fonts.heading};
 
   span {
@@ -33,8 +33,8 @@ export const Title = styled.h1`
     font-size: 3.5rem;
   }
 
-  @media ${media.desktop} {
-    font-size: 4rem;
+  @media ${media.smallMobile}, ${media.mobile} {
+    font-size: 2.5rem;
   }
 `;
 

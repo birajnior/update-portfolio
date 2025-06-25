@@ -54,7 +54,7 @@ const SkillItem = styled.div`
   }
 `;
 
-export const SkillsGrid = () => {
+const SkillsGrid = () => {
   return (
     <Grid aria-label="Tecnologias dominadas">
       <SkillItem>
@@ -108,3 +108,5 @@ export const SkillsGrid = () => {
     </Grid>
   );
 };
+
+export default SkillsGrid;

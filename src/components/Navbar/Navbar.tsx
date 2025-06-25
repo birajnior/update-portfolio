@@ -12,7 +12,7 @@ import {
   CenterLogo,
 } from './Navbar.styles';
 import { FiMenu, FiX } from 'react-icons/fi';
-import logo from '../../assets/nova-marca.png';
+import logo from '../../assets/nova-marca.webp';
 
 export const Navbar = () => {
   const [show, setShow] = useState(true);

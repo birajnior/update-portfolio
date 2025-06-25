@@ -21,7 +21,7 @@ const services = [
   },
 ];
 
-export const ServicesSection = () => {
+const ServicesSection = () => {
   return (
     <Section
       id="servicos"
@@ -55,3 +55,5 @@ export const ServicesSection = () => {
     </Section>
   );
 };
+
+export default ServicesSection;

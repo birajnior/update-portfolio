@@ -1,5 +1,3 @@
-// ContactSection.tsx
-import React from 'react';
 import {
   Section,
   Container,
@@ -21,7 +19,7 @@ import {
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaWhatsapp, FaInstagram, FaTiktok } from 'react-icons/fa';
 
-export const ContactSection: React.FC = () => {
+const ContactSection: React.FC = () => {
   return (
     <Section id="contato" aria-label="Entre em contato">
       <Container>
