@@ -2,7 +2,8 @@
 
 Este é o repositório do meu portfólio pessoal como desenvolvedor front-end, criado com foco em performance, design moderno e responsividade. O projeto tem como objetivo apresentar minhas habilidades, experiências e serviços de forma profissional e atrativa para potenciais clientes e recrutadores.
 
-![preview do site](./assets/preview.png)
+<img alt="preview do site" src=".github/preview.png" width="100%">
+
 
 
 ## 🛠️ Tecnologias Utilizadas
