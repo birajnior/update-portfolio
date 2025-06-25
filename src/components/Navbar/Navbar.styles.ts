@@ -113,18 +113,43 @@ export const HoverZone = styled.div`
   z-index: 60;
 `;
 
+// Container para a logo que aparece à esquerda em telas menores (notebook e abaixo)
+export const LogoWrapper = styled.div`
+  display: none;
+
+  // Mostrar o logo à esquerda em telas notebook, tablet e mobiles
+  @media ${media.notebook}, ${media.tablet}, ${media.mobile}, ${media.smallMobile} {
+    display: block;
+    margin-left: 0.5rem;
+  }
+`;
+
+// Estilo da imagem do logo na esquerda
+export const LogoImage = styled.img`
+  width: 45px;
+`;
+
+// Logo centralizada que aparece só em telas maiores que notebook
+export const CenterLogo = styled.img`
+  display: block;
+  width: 65px;
+
+  // Esconder logo central em telas menores ou iguais a notebook
+  @media ${media.notebook}, ${media.tablet}, ${media.mobile}, ${media.smallMobile} {
+    display: none;
+  }
+`;
+
 // Estilização do título JBDEVELOPER
 export const Brand = styled.h1`
-  font-size: 1.5rem;
+  font-family: ${({ theme }) => theme.fonts.brand};
+  font-size: 1.8rem;
   font-weight: bold;
   color: white;
   white-space: nowrap;
 
-  @media ${media.notebook} {
-    font-size: 1.2rem;
-  }
-
-  @media ${media.mobile}, ${media.smallMobile} {
-    font-size: 1rem;
+  // Esconder Brand em telas notebook e menores
+  @media ${media.notebook}, ${media.tablet}, ${media.mobile}, ${media.smallMobile} {
+    display: none;
   }
 `;

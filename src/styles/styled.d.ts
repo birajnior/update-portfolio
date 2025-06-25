@@ -19,6 +19,7 @@ declare module 'styled-components' {
     fonts: {
       body: string;
       heading: string;
+      brand: string;
     };
     spacing: {
       xxs: string;

@@ -1,5 +1,16 @@
 import { useState, useEffect } from 'react';
-import { Container, Header, HoverZone, Menu, HamburgerButton, MobileMenu, Brand } from './Navbar.styles';
+import {
+  Container,
+  Header,
+  HoverZone,
+  Menu,
+  HamburgerButton,
+  MobileMenu,
+  Brand,
+  LogoWrapper,
+  LogoImage,
+  CenterLogo,
+} from './Navbar.styles';
 import { FiMenu, FiX } from 'react-icons/fi';
 import logo from '../../assets/nova-marca.png';
 
@@ -20,7 +31,6 @@ export const Navbar = () => {
     { id: 'inicio', label: 'Início' },
     { id: 'servicos', label: 'Serviços' },
     { id: 'projetos', label: 'Projetos' },
-    // { id: 'depoimentos', label: 'Depoimentos' },
     { id: 'sobre', label: 'Sobre' },
     { id: 'contato', label: 'Contato' },
   ];
@@ -33,7 +43,7 @@ export const Navbar = () => {
         setShow(true);
       } else {
         setShow(false);
-        setMobileOpen(false); // fecha o menu mobile ao rolar
+        setMobileOpen(false);
       }
 
       setLastScrollY(currentY);
@@ -56,18 +66,20 @@ export const Navbar = () => {
         <Container>
           <div className="flex items-center justify-between w-full">
             {/* Esquerda */}
-            <div className="w-1/3">
-              <Brand>JBDEVELOPER</Brand>
+            <div className="flex items-center justify-start w-1/3">
+              <Brand>JB DEVELOPER</Brand>
+              <LogoWrapper>
+                <LogoImage src={logo} alt="Logo" />
+              </LogoWrapper>
             </div>
 
-            {/* Centro */}
+            {/* Centro (logo só aparece em telas grandes) */}
             <div className="w-1/3 flex justify-center">
-              <img src={logo} style={{ width: '65px' }} />
+              <CenterLogo src={logo} alt="Logo" />
             </div>
 
             {/* Direita */}
             <div className="w-1/3 flex justify-end items-center gap-4">
-              {/* Botão hamburger (aparece só no mobile) */}
               <HamburgerButton
                 aria-label={mobileOpen ? 'Fechar menu' : 'Abrir menu'}
                 onClick={() => setMobileOpen((prev) => !prev)}
@@ -75,7 +87,6 @@ export const Navbar = () => {
                 {mobileOpen ? <FiX /> : <FiMenu />}
               </HamburgerButton>
 
-              {/* Menu desktop (oculto em telas pequenas) */}
               <Menu>
                 {menuItems.map(({ id, label }) => (
                   <li key={id}>
@@ -95,7 +106,6 @@ export const Navbar = () => {
           </div>
         </Container>
 
-        {/* Menu Mobile (aparece abaixo do header) */}
         {mobileOpen && (
           <MobileMenu
             initial={{ opacity: 0, y: -10 }}
@@ -110,7 +120,7 @@ export const Navbar = () => {
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection(id);
-                    setMobileOpen(false); // Fecha o menu ao clicar
+                    setMobileOpen(false);
                   }}
                 >
                   {label}

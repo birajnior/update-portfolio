@@ -15,6 +15,7 @@ export const theme = {
   fonts: {
     body: "'Roboto', sans-serif",
     heading: "'Poppins', sans-serif",
+    brand: "'Cactus', sans-serif"
   },
   spacing: {
     xxs: '0.25rem', // 4px
