@@ -1,54 +1,100 @@
-# React + TypeScript + Vite
+# 🚀 Portfólio Pessoal — JB Developer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é o repositório do meu portfólio pessoal como desenvolvedor front-end, criado com foco em performance, design moderno e responsividade. O projeto tem como objetivo apresentar minhas habilidades, experiências e serviços de forma profissional e atrativa para potenciais clientes e recrutadores.
 
-Currently, two official plugins are available:
+![preview do site](./assets/preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚛️ [React.js](https://reactjs.org/)
+- 🟦 [TypeScript](https://www.typescriptlang.org/)
+- 🎨 [Tailwind CSS](https://tailwindcss.com/)
+- 💅 [styled-components](https://styled-components.com/)
+- 🎞 [Framer Motion](https://www.framer.com/motion/)
+- ⚡ [Vite](https://vitejs.dev/)
+- 🧪 [Vitest](https://vitest.dev/)
+- 🧹 Eslint + Prettier
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── assets/            # Imagens e ícones
+├── components/        # Componentes reutilizáveis
+├── pages/             # Páginas principais
+├── styles/            # Tema, global styles e breakpoints
+├── hooks/             # Custom hooks
+├── utils/             # Funções utilitárias
+├── App.tsx            # Componente raiz
+└── main.tsx           # Entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🧪 Rodando Localmente
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+# Clone o repositório
+git clone https://github.com/birajnior/update-portfolio.git
+
+# Acesse a pasta
+cd update-portfolio
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm run dev
 ```
+
+---
+
+## 📦 Build de Produção
+
+```bash
+npm run build
+```
+
+---
+
+## 📌 Funcionalidades
+
+- Design moderno e responsivo
+- Seções com animações suaves via framer-motion
+- Navbar inteligente (aparece ao subir, oculta ao descer)
+- Temas e cores centralizados em `theme.ts`
+- Breakpoints reutilizáveis via `media.ts`
+- Código modular e escalável
+
+---
+
+## 📸 Demonstração
+
+👉 Em breve no ar: [https://jbdeveloper.com.br](https://jbdeveloper.com.br)
+
+---
+
+## 🤝 Contribuições
+
+Projeto pessoal, não aberto para contribuições externas neste momento. Sugestões e feedbacks são bem-vindos via Issues.
+
+---
+
+## 📄 Licença
+
+Distribuído sob a licença MIT. Veja o arquivo `LICENSE` para mais informações.
+
+---
+
+## 📬 Contato
+
+- Instagram: [@birajnior](https://instagram.com/birajnior)
+- LinkedIn: [Ubiratan Bernardo](https://linkedin.com/in/ubiratanbernardo)
+- Portfólio: [jbdeveloper.com.br](https://jbdeveloper.com.br)
+
+---
+
+> Projeto em constante evolução 🚧 — acompanhe para novidades!
