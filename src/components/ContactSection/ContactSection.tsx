@@ -87,7 +87,15 @@ const ContactSection: React.FC = () => {
 
     await enviarFormulario(
       formRef.current,
-      () => setIsSuccessModalOpen(true),
+      () => {
+        formRef.current?.reset();
+        setNome('');
+        setEmail('');
+        setTelefone('');
+        setMensagem('');
+        setSelect('');
+        setIsSuccessModalOpen(true);
+      },
       () => setIsErrorModalOpen(true),
       (loading) => setIsSending(loading)
     );
