@@ -4,8 +4,6 @@ Este é o repositório do meu portfólio pessoal como desenvolvedor front-end, c
 
 <img alt="preview do site" src=".github/preview.png" width="100%">
 
-
-
 ## 🛠️ Tecnologias Utilizadas
 
 - ⚛️ [React.js](https://reactjs.org/)
@@ -15,6 +13,7 @@ Este é o repositório do meu portfólio pessoal como desenvolvedor front-end, c
 - 🎞 [Framer Motion](https://www.framer.com/motion/)
 - ⚡ [Vite](https://vitejs.dev/)
 - 🧪 [Vitest](https://vitest.dev/)
+- 📩 [EmailJS](https://www.emailjs.com/)
 - 🧹 Eslint + Prettier
 
 ---
@@ -69,6 +68,16 @@ npm run build
 - Temas e cores centralizados em `theme.ts`
 - Breakpoints reutilizáveis via `media.ts`
 - Código modular e escalável
+
+---
+
+## 📩 Envio de Formulário de Contato
+
+- Integração com [EmailJS](https://www.emailjs.com/) para envio de mensagens diretamente pelo formulário, dispensando backend próprio
+- Validação robusta dos campos: nome, email, telefone (com máscara), mensagem e preferência de contato
+- Feedback visual ao usuário por meio de modais personalizados de sucesso e erro
+- Estilização dos inputs, textarea e select via [styled-components](https://styled-components.com/) com paleta de cores do tema
+- Tratamento assíncrono do envio com controle do estado de loading para melhor UX
 
 ---
 
