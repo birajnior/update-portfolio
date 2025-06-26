@@ -28,7 +28,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({ value, onChange, error }) => {
         placeholder="Telefone"
         value={formatPhone(value)}
         onChange={handleChange}
-        hasError={!!error}
+        $hasError={!!error}
         required
       />
       {error && <ErrorMessage>{error}</ErrorMessage>}
