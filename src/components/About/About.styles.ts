@@ -17,16 +17,12 @@ export const Title = styled.h2`
 
 export const ContentWrapper = styled.div`
   display: flex;
-  gap: 8rem;
+  gap: 5rem;
   align-items: flex-start;
   justify-content: center;
   max-width: 1580px;
   margin: 0 auto;
   padding-inline: ${({ theme }) => theme.spacing.xl};
-
-  @media ${media.desktop} {
-    gap: 5rem;
-  }
 
   @media ${media.notebook}, ${media.tablet}, ${media.mobile}, ${media.smallMobile} {
     flex-direction: column;

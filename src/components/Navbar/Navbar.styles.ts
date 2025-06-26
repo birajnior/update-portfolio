@@ -21,7 +21,7 @@ export const Menu = styled.ul`
   }
 
   a {
-    padding: 1.25rem;
+    padding: 1rem;
     color: white;
     border-radius: 0.375rem;
     transition: background-color 0.25s ease;
