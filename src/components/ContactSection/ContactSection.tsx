@@ -119,7 +119,7 @@ const ContactSection: React.FC = () => {
               placeholder="Nome"
               value={nome}
               onChange={(e) => setNome(e.target.value)}
-              hasError={!!errors.nome}
+              $hasError={!!errors.nome}
               required
             />
             {errors.nome && <ErrorMessage>{errors.nome}</ErrorMessage>}
@@ -130,7 +130,7 @@ const ContactSection: React.FC = () => {
               placeholder="E-mail"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              hasError={!!errors.email}
+              $hasError={!!errors.email}
               required
             />
             {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
@@ -141,7 +141,7 @@ const ContactSection: React.FC = () => {
               name="contact_preference"
               value={select}
               onChange={(e) => setSelect(e.target.value)}
-              hasError={!!errors.select}
+              $hasError={!!errors.select}
               required
             >
               <option value="" disabled>
@@ -158,7 +158,7 @@ const ContactSection: React.FC = () => {
               placeholder="Descreva um pouco do seu projeto!"
               value={mensagem}
               onChange={(e) => setMensagem(e.target.value)}
-              hasError={!!errors.mensagem}
+              $hasError={!!errors.mensagem}
               required
             />
             {errors.mensagem && <ErrorMessage>{errors.mensagem}</ErrorMessage>}

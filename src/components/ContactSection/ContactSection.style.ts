@@ -57,10 +57,10 @@ export const Form = styled.form`
   gap: ${({ theme }) => theme.spacing.md};
 `;
 
-export const Input = styled.input<{ hasError?: boolean }>`
+export const Input = styled.input<{ $hasError?: boolean }>`
   background-color: ${({ theme }) => theme.colors.border};
   width: 100%;
-  border: 1px solid ${({ hasError, theme }) => (hasError ? '#f87171' : theme.colors.light)};
+  border: 1px solid ${({ $hasError, theme }) => ($hasError ? '#f87171' : theme.colors.light)};
   padding: ${({ theme }) => theme.spacing.sm};
   color: ${({ theme }) => theme.colors.text};
   border-radius: 0.5rem;
@@ -69,38 +69,38 @@ export const Input = styled.input<{ hasError?: boolean }>`
   outline: none;
   transition: border-color 0.2s ease-in-out;
 
-  ${({ hasError }) =>
-    hasError &&
+  ${({ $hasError }) =>
+    $hasError &&
     `
     box-shadow: 0 0 0 1px #f87171;
   `};
 
   &:focus {
-    border-color: ${({ hasError, theme }) => (hasError ? '#f87171' : theme.colors.primary)};
+    border-color: ${({ $hasError, theme }) => ($hasError ? '#f87171' : theme.colors.primary)};
   }
 `;
 
-export const TextArea = styled.textarea<{ hasError?: boolean }>`
+export const TextArea = styled.textarea<{ $hasError?: boolean }>`
   background-color: ${({ theme }) => theme.colors.border};
   font-family: ${({ theme }) => theme.fonts.body};
   padding: ${({ theme }) => theme.spacing.sm};
   color: ${({ theme }) => theme.colors.text};
   width: 100%;
   min-height: 100px;
-  border: 1px solid ${({ hasError, theme }) => (hasError ? '#f87171' : theme.colors.light)};
+  border: 1px solid ${({ $hasError, theme }) => ($hasError ? '#f87171' : theme.colors.light)};
   border-radius: 0.375rem;
   outline: none;
   resize: vertical;
   transition: border-color 0.2s;
 
   &:focus {
-    border-color: ${({ hasError, theme }) => (hasError ? '#f87171' : theme.colors.primary)};
+    border-color: ${({ $hasError, theme }) => ($hasError ? '#f87171' : theme.colors.primary)};
   }
 `;
 
-export const Select = styled.select<{ hasError?: boolean }>`
+export const Select = styled.select<{ $hasError?: boolean }>`
   background-color: ${({ theme }) => theme.colors.border};
-  border: 1px solid ${({ hasError, theme }) => (hasError ? '#f87171' : theme.colors.light)};
+  border: 1px solid ${({ $hasError, theme }) => ($hasError ? '#f87171' : theme.colors.light)};
   padding: ${({ theme }) => theme.spacing.sm};
   color: ${({ theme }) => theme.colors.text};
   border-radius: 0.5rem;
@@ -109,7 +109,7 @@ export const Select = styled.select<{ hasError?: boolean }>`
   transition: border-color 0.2s;
 
   &:focus {
-    border-color: ${({ hasError, theme }) => (hasError ? '#f87171' : theme.colors.primary)};
+    border-color: ${({ $hasError, theme }) => ($hasError ? '#f87171' : theme.colors.primary)};
   }
 `;
 

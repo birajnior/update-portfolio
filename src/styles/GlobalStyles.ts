@@ -53,4 +53,42 @@ export const GlobalStyle = createGlobalStyle`
   button:hover {
     background-color: ${({ theme }) => theme.colors.buttonHover};
   }
+
+/* WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: ${({ theme }) => theme.colors.light};
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: ${({ theme }) => theme.colors.primary};
+  border-radius: 10px;
+  border: 2px solid ${({ theme }) => theme.colors.emphasis};
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: ${({ theme }) => theme.colors.emphasis};
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: ${({ theme }) => theme.colors.primary} ${({ theme }) => theme.colors.light};
+}
+
+  /* Scroll Animation */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+
+  .animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 `;
