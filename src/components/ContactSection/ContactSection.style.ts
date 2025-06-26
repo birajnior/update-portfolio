@@ -57,33 +57,60 @@ export const Form = styled.form`
   gap: ${({ theme }) => theme.spacing.md};
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<{ hasError?: boolean }>`
   background-color: ${({ theme }) => theme.colors.border};
-  border: 1px solid ${({ theme }) => theme.colors.light};
+  width: 100%;
+  border: 1px solid ${({ hasError, theme }) => (hasError ? '#f87171' : theme.colors.light)};
   padding: ${({ theme }) => theme.spacing.sm};
   color: ${({ theme }) => theme.colors.text};
   border-radius: 0.5rem;
   font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+
+  ${({ hasError }) =>
+    hasError &&
+    `
+    box-shadow: 0 0 0 1px #f87171;
+  `};
+
+  &:focus {
+    border-color: ${({ hasError, theme }) => (hasError ? '#f87171' : theme.colors.primary)};
+  }
 `;
 
-export const TextArea = styled.textarea`
+export const TextArea = styled.textarea<{ hasError?: boolean }>`
   background-color: ${({ theme }) => theme.colors.border};
-  border: 1px solid ${({ theme }) => theme.colors.light};
+  font-family: ${({ theme }) => theme.fonts.body};
   padding: ${({ theme }) => theme.spacing.sm};
   color: ${({ theme }) => theme.colors.text};
-  border-radius: 0.5rem;
-  font-family: ${({ theme }) => theme.fonts.body};
-  resize: none;
-  min-height: 150px;
+  width: 100%;
+  min-height: 100px;
+  border: 1px solid ${({ hasError, theme }) => (hasError ? '#f87171' : theme.colors.light)};
+  border-radius: 0.375rem;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: ${({ hasError, theme }) => (hasError ? '#f87171' : theme.colors.primary)};
+  }
 `;
 
-export const Select = styled.select`
+export const Select = styled.select<{ hasError?: boolean }>`
   background-color: ${({ theme }) => theme.colors.border};
-  border: 1px solid ${({ theme }) => theme.colors.light};
+  border: 1px solid ${({ hasError, theme }) => (hasError ? '#f87171' : theme.colors.light)};
   padding: ${({ theme }) => theme.spacing.sm};
   color: ${({ theme }) => theme.colors.text};
   border-radius: 0.5rem;
   font-family: ${({ theme }) => theme.fonts.body};
+  outline: none;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: ${({ hasError, theme }) => (hasError ? '#f87171' : theme.colors.primary)};
+  }
 `;
 
 export const SubmitButton = styled.button`
@@ -178,4 +205,11 @@ export const Email = styled.p`
   @media ${media.smallMobile}, ${media.mobile}, ${media.tablet} {
     font-size: 1rem;
   }
+`;
+
+export const ErrorMessage = styled.span`
+  color: #f87171; // vermelho de erro permanece
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
 `;

@@ -1,3 +1,5 @@
+import { useRef, useState } from 'react';
+import type { FormEvent } from 'react';
 import {
   Section,
   Container,
@@ -14,12 +16,83 @@ import {
   Description,
   CallToWork,
   Email,
+  ErrorMessage,
 } from './ContactSection.style';
-
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaWhatsapp, FaInstagram, FaTiktok } from 'react-icons/fa';
 
+import SuccessModal from '../Modal/SuccessModal';
+import ErrorModal from '../Modal/ErrorModal';
+
+import {
+  validarNome,
+  validarEmail,
+  validarTelefone,
+  validarMensagem,
+  validarSelect,
+} from '../../utils/email/formValidation';
+import { enviarFormulario } from '../../utils/email/sendEmail';
+import PhoneInput from '../../utils/email/PhoneInput';
+
 const ContactSection: React.FC = () => {
+  // estados para os campos
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [telefone, setTelefone] = useState('');
+  const [mensagem, setMensagem] = useState('');
+  const [select, setSelect] = useState('');
+
+  // estados de erro
+  const [errors, setErrors] = useState({
+    nome: '',
+    email: '',
+    telefone: '',
+    mensagem: '',
+    select: '',
+  });
+
+  const formRef = useRef<HTMLFormElement>(null);
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+  const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+
+  function validarCampos() {
+    const eNome = validarNome(nome) ? '' : 'O nome precisa ter pelo menos 3 caracteres.';
+    const eEmail = validarEmail(email) ? '' : 'Insira um email válido.';
+    const eTelefone = validarTelefone(telefone)
+      ? ''
+      : 'Telefone deve ter entre 10 e 11 dígitos numéricos.';
+    const eMensagem = validarMensagem(mensagem)
+      ? ''
+      : 'A mensagem precisa ter pelo menos 10 caracteres.';
+    const eSelect = validarSelect(select) ? '' : 'Por favor, selecione uma preferência de contato.';
+
+    setErrors({
+      nome: eNome,
+      email: eEmail,
+      telefone: eTelefone,
+      mensagem: eMensagem,
+      select: eSelect,
+    });
+
+    return !eNome && !eEmail && !eTelefone && !eMensagem && !eSelect;
+  }
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!validarCampos()) return;
+
+    if (!formRef.current) return;
+
+    await enviarFormulario(
+      formRef.current,
+      () => setIsSuccessModalOpen(true),
+      () => setIsErrorModalOpen(true),
+      (loading) => setIsSending(loading)
+    );
+  };
+
   return (
     <Section id="contato" aria-label="Entre em contato">
       <Container>
@@ -31,11 +104,38 @@ const ContactSection: React.FC = () => {
           viewport={{ once: true }}
         >
           <TitleFom>Entre em contato!</TitleFom>
-          <Form onSubmit={(e) => e.preventDefault()}>
-            <Input type="text" name="name" placeholder="Nome" required />
-            <Input type="email" name="email" placeholder="E-mail" required />
-            <Input type="tel" name="phone" placeholder="Telefone" required />
-            <Select name="contact_preference" defaultValue="" required>
+          <Form ref={formRef} onSubmit={handleSubmit}>
+            <Input
+              type="text"
+              name="user_name"
+              placeholder="Nome"
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
+              hasError={!!errors.nome}
+              required
+            />
+            {errors.nome && <ErrorMessage>{errors.nome}</ErrorMessage>}
+
+            <Input
+              type="email"
+              name="user_email"
+              placeholder="E-mail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              hasError={!!errors.email}
+              required
+            />
+            {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
+
+            <PhoneInput value={telefone} onChange={setTelefone} error={errors.telefone} />
+
+            <Select
+              name="contact_preference"
+              value={select}
+              onChange={(e) => setSelect(e.target.value)}
+              hasError={!!errors.select}
+              required
+            >
               <option value="" disabled>
                 Preferência de contato
               </option>
@@ -43,8 +143,21 @@ const ContactSection: React.FC = () => {
               <option value="Email">Email</option>
               <option value="Ligação">Ligação</option>
             </Select>
-            <TextArea name="project" placeholder="Descreva um pouco do seu projeto!" required />
-            <SubmitButton type="submit">Enviar</SubmitButton>
+            {errors.select && <ErrorMessage>{errors.select}</ErrorMessage>}
+
+            <TextArea
+              name="project_description"
+              placeholder="Descreva um pouco do seu projeto!"
+              value={mensagem}
+              onChange={(e) => setMensagem(e.target.value)}
+              hasError={!!errors.mensagem}
+              required
+            />
+            {errors.mensagem && <ErrorMessage>{errors.mensagem}</ErrorMessage>}
+
+            <SubmitButton type="submit" disabled={isSending}>
+              {isSending ? 'Enviando...' : 'Enviar'}
+            </SubmitButton>
           </Form>
         </FormContainer>
 
@@ -87,6 +200,10 @@ const ContactSection: React.FC = () => {
           </Socials>
         </InfoContainer>
       </Container>
+
+      {/* Modais de retorno */}
+      <SuccessModal isOpen={isSuccessModalOpen} onClose={() => setIsSuccessModalOpen(false)} />
+      <ErrorModal isOpen={isErrorModalOpen} onClose={() => setIsErrorModalOpen(false)} />
     </Section>
   );
 };

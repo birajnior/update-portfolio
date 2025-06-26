@@ -1,7 +1,8 @@
-import React, { lazy } from 'react';
+import React, { lazy, useEffect } from 'react';
 import { Hero } from './components/Hero/Hero';
 import { Navbar } from './components/Navbar/Navbar';
 import { SectionDivider } from './components/SectionDivider';
+import { inicializarValidacoes } from './utils/email/initForm';
 
 const ServicesSection = lazy(() => import('./components/ServicesSection/ServicesSection'));
 const ProjectsSection = lazy(() => import('./components/ProjectsSection/ProjectsSection'));
@@ -10,6 +11,9 @@ const ContactSection = lazy(() => import('./components/ContactSection/ContactSec
 const Footer = lazy(() => import('./components/Footer/Footer'));
 
 function App() {
+  useEffect(() => {
+    inicializarValidacoes();
+  });
   return (
     <>
       <Navbar />
