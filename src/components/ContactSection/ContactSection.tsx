@@ -202,7 +202,11 @@ const ContactSection: React.FC = () => {
             <a href="https://www.tiktok.com/@birajnior" target="_blank" rel="noreferrer">
               <FaTiktok />
             </a>
-            <a href="https://wa.me/55seunumero" target="_blank" rel="noreferrer">
+            <a
+              href="https://wa.me/5511932349135?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20a%20cria%C3%A7%C3%A3o%20de%20um%20site."
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaWhatsapp />
             </a>
           </Socials>
