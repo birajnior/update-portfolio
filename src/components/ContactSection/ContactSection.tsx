@@ -203,7 +203,7 @@ const ContactSection: React.FC = () => {
               <FaTiktok />
             </a>
             <a
-              href="https://wa.me/5511932349135?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20a%20cria%C3%A7%C3%A3o%20de%20um%20site."
+              href="https://wa.me/5511995560985?text=Olá%2C%20gostaria%20de%20solicitar%20um%20orçamento%20para%20a%20criação%20de%20um%20site.%20Pode%20me%20ajudar%3F"
               target="_blank"
               rel="noreferrer"
             >
