@@ -1,4 +1,4 @@
-import lumeMockup from './images/lume-store-mockup.webp';
+// import lumeMockup from './images/lume-store-mockup.webp';
 import serenattoMockup from './images/serenatto-mockup.webp';
 import senhasMockup from './images/gerador-de-senhas-mockup.webp';
 import godofwarMockup from './images/god-of-war-mockup.webp';
@@ -6,15 +6,15 @@ import cookinupMockup from './images/cookin-up-mockup.webp';
 import fokusMockup from './images/fokus-mockup.webp';
 
 export const ProjectsData = [
-  {
-    title: 'Lume Store',
-    description:
-      'Loja virtual com design moderno, vitrine responsiva e destaque para produtos promocionais. Ideal para negócios que querem vender online com visual profissional.',
-    techs: ['React', 'Styled-components', 'Bootstrap'],
-    image: lumeMockup,
-    repo: 'https://github.com/birajnior/Lume-Store',
-    live: 'https://lume-store.vercel.app/',
-  },
+  // {
+  //   title: 'Lume Store',
+  //   description:
+  //     'Loja virtual com design moderno, vitrine responsiva e destaque para produtos promocionais. Ideal para negócios que querem vender online com visual profissional.',
+  //   techs: ['React', 'Styled-components', 'Bootstrap'],
+  //   image: lumeMockup,
+  //   repo: 'https://github.com/birajnior/Lume-Store',
+  //   live: 'https://lume-store.vercel.app/',
+  // },
   {
     title: 'Fokus',
     description:
